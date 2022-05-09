@@ -23,7 +23,7 @@ public class Menu {
 
     public void setHotkey()
     {
-        String hotkey = String.valueOf(getInput("What hotkey would you like to use to start/stop the program?:\t"));
+        int hotkey = Integer.parseInt(getInput("What hotkey would you like to use to start/stop the program?:\t"));
         s.setHotkey(hotkey);
     }
 
@@ -38,7 +38,7 @@ public class Menu {
     public int getInput()
     {
         Scanner s = new Scanner(System.in);
-        return s.nextInt();
+        return Integer.parseInt(s.nextLine());
     }
 
 }

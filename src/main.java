@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.KeyListener;
 
 public class main {
     //Autoclicker
@@ -9,14 +10,18 @@ public class main {
 
     public static void main(String [] args)
     {
+        Listener listener = new Listener();
         Actions Action = new Actions();
+        Settings settings = new Settings();
         Menu menu = new Menu();
-        Boolean Active = false;
 
-        while(!Active) {
+        while (settings.isActive) {
+        Action.click(500,500, Action.getRandomNumber(Settings.getMinDelay(), Settings.getMaxDelay()));
+    }
+
+        while(!settings.isActive) {
             menu.printMenu();
             int choice = menu.getInput();
-
             switch (choice) {
                 case 0:
                     menu.setDelay();
@@ -35,8 +40,6 @@ public class main {
             }
         }
     //    Hotkey -> Active = !Active
-    //    while (Active) {
-    //        Action.click(500,500, Action.getRandomNumber());
-    //    }
+
     }
 }

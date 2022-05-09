@@ -1,9 +1,9 @@
 public class Settings {
-    public String getHotkey() {
+    public static int getHotkey() {
         return hotkey;
     }
 
-    public void setHotkey(String hotkey) {
+    public void setHotkey(int hotkey) {
         this.hotkey = hotkey;
     }
 
@@ -25,5 +25,7 @@ public class Settings {
     }
 
     private static int minDelay = 100, maxDelay = 300;
-    private static String hotkey;
+    private static int hotkey = 47;
+
+    public boolean isActive = false;
 }
